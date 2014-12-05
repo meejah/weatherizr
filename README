@@ -1,0 +1,10 @@
+This downloads canadian weather forecast data.
+
+To create a virtualenv and use it::
+
+    virtualenv venv
+    ./venv/bin/pip install -r requirements.txt
+
+The only thing in here right now is to download the Environment Canada
+ATOM feed and pull out the next few days' forecast high and
+low. Change the URI in the script.
