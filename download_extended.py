@@ -14,7 +14,7 @@ Hopefully they don't add more <pre> tags ;)
 import urllib2
 from HTMLParser import HTMLParser
 from datetime import datetime
-from os.path import join
+from os.path import join, split
 
 class Parser(HTMLParser):
     recording = False
@@ -36,6 +36,6 @@ parser = Parser()
 parser.feed(data)
 
 fname = datetime.now().strftime('extended/%Y-%m-%d.txt')
-join(__file__, '..', fname)
+fname = join(split(__file__)[0], fname)
 with open(fname, 'w') as f:
     f.write(parser.text)
